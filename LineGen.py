@@ -8,6 +8,7 @@ def LineGenerator ():
     F = []
     for i in range(count):
         F.append(random.randint(-1000000,1000000))
+    print(F)
     #print("Working time: ", t.time()-start)
     return F
 

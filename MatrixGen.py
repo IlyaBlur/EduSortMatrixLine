@@ -1,8 +1,10 @@
-N = int(input("Введите количество строк N: "))
-M = int(input("Введите количество столбцов M: "))
+N = 0
+M = 0
 matrix = []
 def matrixP ():
     global matrix,N,M
+    N = int(input("Введите количество строк N: "))
+    M = int(input("Введите количество столбцов M: "))
     for i in range(N):
         value = (list(map(int, input(f"Введите {M} чисел для {i+1} строки через пробел: ").split())))
         if len(value) > M:
@@ -15,7 +17,6 @@ def matrixP ():
             print(elem, end=" ")
         print()
     return matrix
-
 
 
 def MatrixGen1Line(N,matrix):

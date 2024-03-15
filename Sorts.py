@@ -18,7 +18,6 @@ def what_to_gen(L):
 
 what_to_gen(L)
 
-print(L)
 
 
 
