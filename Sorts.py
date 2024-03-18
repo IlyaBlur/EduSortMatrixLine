@@ -1,22 +1,6 @@
 import  time as t
-import LineGen as LG
-import MatrixGen as MG
 
-start = t.time()
-
-L = [] #list(map(int,input("Введите масcив: ").split()))
-
-def what_to_gen(L):
-    choice = input("Что бы вы хотели сгенерировать М-матрица, L - строка: ")
-    if choice == "L" or "l" or "д" or "Д":
-        L = LG.LineGenerator()
-    elif choice == "M" or "m" or "ь" or "Ь" or "М":
-        L = MG.matrixP()
-    else:
-        print("Ошибка при выборе: ")
-    return L
-
-what_to_gen(L)
+# start = t.time()
 
 
 
@@ -62,11 +46,38 @@ def selection_sort_max (L):
         L[imax],L[len(L)-i-1] = L[len(L)-i-1],L[imax]
     return L
 
-print(selection_sort_max(L))
+# print(selection_sort_max(L))
 
-finish = t.time()
-res_msec = (finish-start)*1000
+def insertion_sort (L):
+    for i in range(1,len(L)):
+        for j in range(i, 0, -1):
+            if L[j]<L[i-1]:
+                L[i],L[i-1] = L[i-1], L[i]
+            else:
+                break
+    print(L)
+    return L
 
-print(res_msec)
+def insertion_sort_with_pop (L):
+    for j in range(1, len(L)):
+        k = j
+        for i in range(j-1, -1, -1):
+            if L[j]<L[i]:
+                k = i
+        elem = L.pop(j)
+        L.insert(k, elem)
+    print(L)
+    return L
+
+# def sort_choice():
+#     print("Выберете сортировку: ")
+#     choice =
+#     if
+
+
+# finish = t.time()
+# res_msec = (finish-start)*1000
+#
+# print(res_msec)
 
 

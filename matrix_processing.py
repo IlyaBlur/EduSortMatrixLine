@@ -1,6 +1,6 @@
-from MatrixGen import matrix,N
+# from MatrixGen import matrix,N
 
-Average = []
+# Average = []
 def MinusToAverege(matrix,Average,N):
     print("Замена отрицательных элементов на среднее значение положительных в строке: ")
     for j in range(N):
@@ -14,12 +14,12 @@ def MinusToAverege(matrix,Average,N):
         print()
     return Average
 
-MinusToAverege(matrix,Average,N)
+# MinusToAverege(matrix,Average,N)
 
 
 
 
-MaxElem = []
+# MaxElem = []
 def MaxRowElem (MaxElem,matrix):
     print("Максимальные значение по строкам: ")
     for row in matrix:
