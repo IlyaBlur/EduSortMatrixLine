@@ -1,46 +1,43 @@
-# from MatrixGen import matrix,N
+from MatrixGen import Matrix
 
-# Average = []
-def MinusToAverege(matrix,Average,N):
+
+def MinusToAverege(matrix: Matrix):
     print("Замена отрицательных элементов на среднее значение положительных в строке: ")
-    for j in range(N):
-        positive_numbers = [x for x in matrix[j] if x>0]
-        average =round(sum(positive_numbers)/len(positive_numbers), 2) if positive_numbers else 0
-        modified_row = [x if x > 0 else average for x in matrix[j]]
-        Average.append(modified_row)
-    for row in Average:
+    average = []
+    for j in range(matrix.N):
+        positive_numbers = [x for x in matrix.matrix[j] if x > 0]
+        av = round(sum(positive_numbers) / len(positive_numbers), 2) if positive_numbers else 0
+        modified_row = [x if x > 0 else av for x in matrix.matrix[j]]
+        average.append(modified_row)
+    for row in average:
         for elem in row:
             print(elem, end=" ")
         print()
-    return Average
-
-# MinusToAverege(matrix,Average,N)
+    return average
 
 
-
-
-# MaxElem = []
-def MaxRowElem (MaxElem,matrix):
+def MaxRowElem(matrix: Matrix):
+    max_elem = []
     print("Максимальные значение по строкам: ")
-    for row in matrix:
+    for row in matrix.matrix:
         value = [int(max(row))]
-        MaxElem.append (value)
-    for row in MaxElem:
+        max_elem.append(value)
+    for row in max_elem:
         for elem in row:
-            print(elem, end= " ")
+            print(elem, end=" ")
         print()
-    return
+    return max_elem
 
-# MaxRowElem(MaxElem,matrix)
 
-def MaxСolumnElem (MaxElem,matrix,M):
+def MaxСolumnEelem(matrix: Matrix):
     print("Максимальные значение по столбцам: ")
-    value = [max(row[i] for row in matrix) for i in range(M)]
-    MaxElem.append(value)
-    for row in MaxElem:
+    max_elem = []
+    value = [max(row[i] for row in matrix.matrix) for i in range(matrix.M)]
+    max_elem.append(value)
+    for row in max_elem:
         for elem in row:
             print(elem)
         print()
     return
 
-# MaxСolumnElem(MaxElem,matrix,M)
+# MaxСolumnElem(max_elem,matrix,M)
